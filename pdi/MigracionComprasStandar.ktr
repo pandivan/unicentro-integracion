@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>MigracionComprasStandar</name>
+    <description />
+    <extended_description />
+    <trans_version />
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>/</directory>
+    <parameters>
+    </parameters>
+    <log>
+      <trans-log-table>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+          <subject />
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+          <subject />
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </trans-log-table>
+      <perf-log-table>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>SEQ_NR</id>
+          <enabled>Y</enabled>
+          <name>SEQ_NR</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>INPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>INPUT_BUFFER_ROWS</name>
+        </field>
+        <field>
+          <id>OUTPUT_BUFFER_ROWS</id>
+          <enabled>Y</enabled>
+          <name>OUTPUT_BUFFER_ROWS</name>
+        </field>
+      </perf-log-table>
+      <channel-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+      <step-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>TRANSNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>STEPNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>STEP_COPY</id>
+          <enabled>Y</enabled>
+          <name>STEP_COPY</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+      </step-log-table>
+      <metrics-log-table>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_DATE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DATE</name>
+        </field>
+        <field>
+          <id>METRICS_CODE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_CODE</name>
+        </field>
+        <field>
+          <id>METRICS_DESCRIPTION</id>
+          <enabled>Y</enabled>
+          <name>METRICS_DESCRIPTION</name>
+        </field>
+        <field>
+          <id>METRICS_SUBJECT</id>
+          <enabled>Y</enabled>
+          <name>METRICS_SUBJECT</name>
+        </field>
+        <field>
+          <id>METRICS_TYPE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_TYPE</name>
+        </field>
+        <field>
+          <id>METRICS_VALUE</id>
+          <enabled>Y</enabled>
+          <name>METRICS_VALUE</name>
+        </field>
+      </metrics-log-table>
+    </log>
+    <maxdate>
+      <connection />
+      <table />
+      <field />
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file />
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+    <created_user>-</created_user>
+    <created_date>2020/11/26 11:13:26.634</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2020/11/26 11:13:26.634</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+    <notepad>
+      <note>Cambiar el Id Campaña</note>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
+      <width>151</width>
+      <heigth>26</heigth>
+      <fontname>.AppleSystemUIFont</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+  </notepads>
+  <connection>
+    <name>Heroku</name>
+    <server>ec2-54-146-142-58.compute-1.amazonaws.com</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>detpukejscm3jg</database>
+    <port>5432</port>
+    <username>qxadshebebcnfq</username>
+    <password>Encrypted 6461356336646439356335373139323162376530373463623338613661393631363838386638366266343930633136678aa0cbae0b93c4d0f24bff248b91fd8a</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <order>
+    <hop>
+      <from>Get IdCliente</from>
+      <to>Dummy (do nothing) 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Join</from>
+      <to>compra</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Secuencia Boleta</from>
+      <to>crear boleta</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CSV file input</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Campos Boleta</from>
+      <to>Memory Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Memory Group by</from>
+      <to>Add Info Campaña</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add Info Campaña</from>
+      <to>Add fech_bol</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add fech_bol</from>
+      <to>Get IdCliente</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get IdCliente</from>
+      <to>Secuencia Boleta</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Campos Boleta</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2</from>
+      <to>Get IdLocal</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>crear boleta</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get IdLocal</from>
+      <to>Sort rows 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <step>
+    <name>Dummy (do nothing) 2</name>
+    <type>Dummy</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get IdCliente</name>
+    <type>DBLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>sisbol</schema>
+      <table>cliente</table>
+      <orderby />
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>nrod_cli</name>
+        <field>nrod_cli</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <value>
+        <name>codi_cli</name>
+        <rename>codi_cli</rename>
+        <default />
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Memory Group by</name>
+    <type>MemoryGroupBy</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>nrod_cli</name>
+      </field>
+    </group>
+    <fields>
+      </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>Sort rows</step1>
+    <step2>Sort rows 2</step2>
+    <keys_1>
+      <key>nrod_cli</key>
+    </keys_1>
+    <keys_2>
+      <key>nrod_cli</key>
+    </keys_2>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Secuencia Boleta</name>
+    <type>Sequence</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <valuename>codi_bol</valuename>
+    <use_database>Y</use_database>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <seqname>boleta_codi_bol_seq</seqname>
+    <use_counter>N</use_counter>
+    <counter_name />
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>compra</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>compra</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_bol</column_name>
+        <stream_name>codi_bol</stream_name>
+      </field>
+      <field>
+        <column_name>ndoc_com</column_name>
+        <stream_name>ndoc_com</stream_name>
+      </field>
+      <field>
+        <column_name>fech_com</column_name>
+        <stream_name>fech_com</stream_name>
+      </field>
+      <field>
+        <column_name>valo_com</column_name>
+        <stream_name>valo_com</stream_name>
+      </field>
+      <field>
+        <column_name>loca_com</column_name>
+        <stream_name>loca_com</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1232</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>crear boleta</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>boleta</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_bol</column_name>
+        <stream_name>codi_bol</stream_name>
+      </field>
+      <field>
+        <column_name>codi_cli</column_name>
+        <stream_name>codi_cli</stream_name>
+      </field>
+      <field>
+        <column_name>id_camp</column_name>
+        <stream_name>id_camp</stream_name>
+      </field>
+      <field>
+        <column_name>esta_bol</column_name>
+        <stream_name>esta_bol</stream_name>
+      </field>
+      <field>
+        <column_name>impr_bol</column_name>
+        <stream_name>impr_bol</stream_name>
+      </field>
+      <field>
+        <column_name>anul_bol</column_name>
+        <stream_name>anul_bol</stream_name>
+      </field>
+      <field>
+        <column_name>fech_bol</column_name>
+        <stream_name>fech_bol</stream_name>
+      </field>
+      <field>
+        <column_name>usua_bol</column_name>
+        <stream_name>usua_bol</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>CSV file input</name>
+    <type>CsvInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <filename>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Compras.csv</filename>
+    <filename_field />
+    <rownum_field />
+    <include_filename>N</include_filename>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding>UTF-8</encoding>
+    <fields>
+      <field>
+        <name>TipoDocumento</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>NumeroDocumento</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>NombreCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ApellidoCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>TelefonoCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>MailCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>DireccionCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>BarrioCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>FechaNacimiento</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>SexoCliente</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Local</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>28</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>CategoriaLocal</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>FechaCompra</name>
+        <type>Date</type>
+        <format>dd/MM/yyyy</format>
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ValorCompra</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>NombreCampaña</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ActividadCampaña</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>NumeroPersonaAlcanzarCampaña</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>ValorCampaña</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>IdCampaña</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal>,</decimal>
+        <group>.</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>N</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <remove>
+        <name>TipoDocumento</name>
+      </remove>
+      <remove>
+        <name>NombreCliente</name>
+      </remove>
+      <remove>
+        <name>ApellidoCliente</name>
+      </remove>
+      <remove>
+        <name>TelefonoCliente</name>
+      </remove>
+      <remove>
+        <name>MailCliente</name>
+      </remove>
+      <remove>
+        <name>DireccionCliente</name>
+      </remove>
+      <remove>
+        <name>BarrioCliente</name>
+      </remove>
+      <remove>
+        <name>FechaNacimiento</name>
+      </remove>
+      <remove>
+        <name>SexoCliente</name>
+      </remove>
+      <remove>
+        <name>CategoriaLocal</name>
+      </remove>
+      <remove>
+        <name>NombreCampaña</name>
+      </remove>
+      <remove>
+        <name>ActividadCampaña</name>
+      </remove>
+      <remove>
+        <name>NumeroPersonaAlcanzarCampaña</name>
+      </remove>
+      <remove>
+        <name>ValorCampaña</name>
+      </remove>
+      <remove>
+        <name>IdCampaña</name>
+      </remove>
+      <meta>
+        <name>NumeroDocumento</name>
+        <rename>nrod_cli</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+      <meta>
+        <name>FechaCompra</name>
+        <rename>fech_com</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+      <meta>
+        <name>ValorCompra</name>
+        <rename>valo_com</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Campos Boleta</name>
+    <type>SelectValues</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <remove>
+        <name>Local</name>
+      </remove>
+      <remove>
+        <name>fech_com</name>
+      </remove>
+      <remove>
+        <name>valo_com</name>
+      </remove>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Add Info Campaña</name>
+    <type>Constant</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>id_camp</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+        <nullif>7</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>esta_bol</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>A</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>impr_bol</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>N</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>anul_bol</name>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif>N</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>usua_bol</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+        <nullif>1</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Add fech_bol</name>
+    <type>SystemInfo</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>fech_bol</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <name>ndoc_com</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+        <nullif>6565</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get IdLocal</name>
+    <type>DBLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema>sisbol</schema>
+      <table>tipo</table>
+      <orderby />
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>Local</name>
+        <field>desc_tip</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <value>
+        <name>codi_tip</name>
+        <rename>loca_com</rename>
+        <default />
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>nrod_cli</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>nrod_cli</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step_error_handling>
+    <error>
+      <source_step>Get IdCliente</source_step>
+      <target_step>Dummy (do nothing) 2</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename />
+      <descriptions_valuename />
+      <fields_valuename />
+      <codes_valuename />
+      <max_errors />
+      <max_pct_errors />
+      <min_pct_rows />
+    </error>
+    <error>
+      <source_step>crear boleta</source_step>
+      <target_step>Dummy</target_step>
+      <is_enabled>N</is_enabled>
+      <nr_valuename />
+      <descriptions_valuename />
+      <fields_valuename />
+      <codes_valuename />
+      <max_errors />
+      <max_pct_errors />
+      <min_pct_rows />
+    </error>
+  </step_error_handling>
+  <slave-step-copy-partition-distribution>
+  </slave-step-copy-partition-distribution>
+  <slave_transformation>N</slave_transformation>
+</transformation>

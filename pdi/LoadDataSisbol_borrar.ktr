@@ -498,7 +498,7 @@
     </hop>
     <hop>
       <from>UMcliseb BD</from>
-      <to>Ucliseb 2</to>
+      <to>UMcliseb</to>
       <enabled>N</enabled>
     </hop>
     <hop>
@@ -514,9 +514,64 @@
     <hop>
       <from>Entidad BD</from>
       <to>Entidad</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
+  <step>
+    <name>Barrio</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>barrio</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>id_barrio</column_name>
+        <stream_name>id_barrio</stream_name>
+      </field>
+      <field>
+        <column_name>comuna_bar</column_name>
+        <stream_name>comuna_bar</stream_name>
+      </field>
+      <field>
+        <column_name>nombre_bar</column_name>
+        <stream_name>nombre_bar</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Barrio BD</name>
     <type>ExcelInput</type>
@@ -626,13 +681,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>64</yloc>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Barrio</name>
+    <name>Boleta</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -644,7 +699,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>barrio</table>
+    <table>boleta</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -661,16 +716,40 @@
     <return_field />
     <fields>
       <field>
-        <column_name>id_barrio</column_name>
-        <stream_name>id_barrio</stream_name>
+        <column_name>codi_bol</column_name>
+        <stream_name>codi_bol</stream_name>
       </field>
       <field>
-        <column_name>comuna_bar</column_name>
-        <stream_name>comuna_bar</stream_name>
+        <column_name>codi_cli</column_name>
+        <stream_name>codi_cli</stream_name>
       </field>
       <field>
-        <column_name>nombre_bar</column_name>
-        <stream_name>nombre_bar</stream_name>
+        <column_name>id_camp</column_name>
+        <stream_name>id_camp</stream_name>
+      </field>
+      <field>
+        <column_name>esta_bol</column_name>
+        <stream_name>esta_bol</stream_name>
+      </field>
+      <field>
+        <column_name>impr_bol</column_name>
+        <stream_name>impr_bol</stream_name>
+      </field>
+      <field>
+        <column_name>anul_bol</column_name>
+        <stream_name>anul_bol</stream_name>
+      </field>
+      <field>
+        <column_name>fech_bol</column_name>
+        <stream_name>fech_bol</stream_name>
+      </field>
+      <field>
+        <column_name>usua_bol</column_name>
+        <stream_name>usua_bol</stream_name>
+      </field>
+      <field>
+        <column_name>placavehi_bol</column_name>
+        <stream_name>placavehi_bol</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -681,8 +760,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>64</yloc>
+      <xloc>1440</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -867,13 +946,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>48</yloc>
+      <xloc>1184</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Boleta</name>
+    <name>Campania</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -885,7 +964,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>boleta</table>
+    <table>campania</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -902,40 +981,40 @@
     <return_field />
     <fields>
       <field>
-        <column_name>codi_bol</column_name>
-        <stream_name>codi_bol</stream_name>
-      </field>
-      <field>
-        <column_name>codi_cli</column_name>
-        <stream_name>codi_cli</stream_name>
-      </field>
-      <field>
         <column_name>id_camp</column_name>
         <stream_name>id_camp</stream_name>
       </field>
       <field>
-        <column_name>esta_bol</column_name>
-        <stream_name>esta_bol</stream_name>
+        <column_name>nombre_camp</column_name>
+        <stream_name>nombre_camp</stream_name>
       </field>
       <field>
-        <column_name>impr_bol</column_name>
-        <stream_name>impr_bol</stream_name>
+        <column_name>mecanica_camp</column_name>
+        <stream_name>mecanica_camp</stream_name>
       </field>
       <field>
-        <column_name>anul_bol</column_name>
-        <stream_name>anul_bol</stream_name>
+        <column_name>fechafin_camp</column_name>
+        <stream_name>fechafin_camp</stream_name>
       </field>
       <field>
-        <column_name>fech_bol</column_name>
-        <stream_name>fech_bol</stream_name>
+        <column_name>actividad_camp</column_name>
+        <stream_name>actividad_camp</stream_name>
       </field>
       <field>
-        <column_name>usua_bol</column_name>
-        <stream_name>usua_bol</stream_name>
+        <column_name>numpersonas_camp</column_name>
+        <stream_name>numpersonas_camp</stream_name>
       </field>
       <field>
-        <column_name>placavehi_bol</column_name>
-        <stream_name>placavehi_bol</stream_name>
+        <column_name>valor_camp</column_name>
+        <stream_name>valor_camp</stream_name>
+      </field>
+      <field>
+        <column_name>numeroboleta_camp</column_name>
+        <stream_name>numeroboleta_camp</stream_name>
+      </field>
+      <field>
+        <column_name>estado_camp</column_name>
+        <stream_name>estado_camp</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -946,8 +1025,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>48</yloc>
+      <xloc>368</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1138,7 +1217,7 @@
     </GUI>
   </step>
   <step>
-    <name>Campania</name>
+    <name>Cliente</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -1150,7 +1229,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>campania</table>
+    <table>cliente</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1167,40 +1246,64 @@
     <return_field />
     <fields>
       <field>
-        <column_name>id_camp</column_name>
-        <stream_name>id_camp</stream_name>
+        <column_name>codi_cli</column_name>
+        <stream_name>codi_cli</stream_name>
       </field>
       <field>
-        <column_name>nombre_camp</column_name>
-        <stream_name>nombre_camp</stream_name>
+        <column_name>tpid_cli</column_name>
+        <stream_name>tpid_cli</stream_name>
       </field>
       <field>
-        <column_name>mecanica_camp</column_name>
-        <stream_name>mecanica_camp</stream_name>
+        <column_name>nrod_cli</column_name>
+        <stream_name>nrod_cli</stream_name>
       </field>
       <field>
-        <column_name>fechafin_camp</column_name>
-        <stream_name>fechafin_camp</stream_name>
+        <column_name>exped_cli</column_name>
+        <stream_name>exped_cli</stream_name>
       </field>
       <field>
-        <column_name>actividad_camp</column_name>
-        <stream_name>actividad_camp</stream_name>
+        <column_name>nomb_cli</column_name>
+        <stream_name>nomb_cli</stream_name>
       </field>
       <field>
-        <column_name>numpersonas_camp</column_name>
-        <stream_name>numpersonas_camp</stream_name>
+        <column_name>apel_cli</column_name>
+        <stream_name>apel_cli</stream_name>
       </field>
       <field>
-        <column_name>valor_camp</column_name>
-        <stream_name>valor_camp</stream_name>
+        <column_name>dire_cli</column_name>
+        <stream_name>dire_cli</stream_name>
       </field>
       <field>
-        <column_name>numeroboleta_camp</column_name>
-        <stream_name>numeroboleta_camp</stream_name>
+        <column_name>tele_cli</column_name>
+        <stream_name>tele_cli</stream_name>
       </field>
       <field>
-        <column_name>estado_camp</column_name>
-        <stream_name>estado_camp</stream_name>
+        <column_name>fnac_cli</column_name>
+        <stream_name>fnac_cli</stream_name>
+      </field>
+      <field>
+        <column_name>sexo_cli</column_name>
+        <stream_name>sexo_cli</stream_name>
+      </field>
+      <field>
+        <column_name>emai_cli</column_name>
+        <stream_name>emai_cli</stream_name>
+      </field>
+      <field>
+        <column_name>prof_cli</column_name>
+        <stream_name>prof_cli</stream_name>
+      </field>
+      <field>
+        <column_name>punt_cli</column_name>
+        <stream_name>punt_cli</stream_name>
+      </field>
+      <field>
+        <column_name>fuco_cli</column_name>
+        <stream_name>fuco_cli</stream_name>
+      </field>
+      <field>
+        <column_name>id_barrio</column_name>
+        <stream_name>id_barrio</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -1211,8 +1314,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>144</yloc>
+      <xloc>816</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1269,12 +1372,12 @@
       </field>
       <field>
         <name>tpid_cli</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format>#</format>
+        <format />
         <currency />
         <decimal />
         <group />
@@ -1353,7 +1456,7 @@
       </field>
       <field>
         <name>fnac_cli</name>
-        <type>String</type>
+        <type>Date</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -1475,7 +1578,7 @@
     </GUI>
   </step>
   <step>
-    <name>Cliente</name>
+    <name>Compra</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -1487,7 +1590,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>cliente</table>
+    <table>compra</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1504,64 +1607,32 @@
     <return_field />
     <fields>
       <field>
-        <column_name>codi_cli</column_name>
-        <stream_name>codi_cli</stream_name>
+        <column_name>codi_com</column_name>
+        <stream_name>codi_com</stream_name>
       </field>
       <field>
-        <column_name>tpid_cli</column_name>
-        <stream_name>tpid_cli</stream_name>
+        <column_name>codi_bol</column_name>
+        <stream_name>codi_bol</stream_name>
       </field>
       <field>
-        <column_name>nrod_cli</column_name>
-        <stream_name>nrod_cli</stream_name>
+        <column_name>tdoc_com</column_name>
+        <stream_name>tdoc_com</stream_name>
       </field>
       <field>
-        <column_name>exped_cli</column_name>
-        <stream_name>exped_cli</stream_name>
+        <column_name>ndoc_com</column_name>
+        <stream_name>ndoc_com</stream_name>
       </field>
       <field>
-        <column_name>nomb_cli</column_name>
-        <stream_name>nomb_cli</stream_name>
+        <column_name>fech_com</column_name>
+        <stream_name>fech_com</stream_name>
       </field>
       <field>
-        <column_name>apel_cli</column_name>
-        <stream_name>apel_cli</stream_name>
+        <column_name>valo_com</column_name>
+        <stream_name>valo_com</stream_name>
       </field>
       <field>
-        <column_name>dire_cli</column_name>
-        <stream_name>dire_cli</stream_name>
-      </field>
-      <field>
-        <column_name>tele_cli</column_name>
-        <stream_name>tele_cli</stream_name>
-      </field>
-      <field>
-        <column_name>fnac_cli</column_name>
-        <stream_name>fnac_cli</stream_name>
-      </field>
-      <field>
-        <column_name>sexo_cli</column_name>
-        <stream_name>sexo_cli</stream_name>
-      </field>
-      <field>
-        <column_name>emai_cli</column_name>
-        <stream_name>emai_cli</stream_name>
-      </field>
-      <field>
-        <column_name>prof_cli</column_name>
-        <stream_name>prof_cli</stream_name>
-      </field>
-      <field>
-        <column_name>punt_cli</column_name>
-        <stream_name>punt_cli</stream_name>
-      </field>
-      <field>
-        <column_name>fuco_cli</column_name>
-        <stream_name>fuco_cli</stream_name>
-      </field>
-      <field>
-        <column_name>id_barrio</column_name>
-        <stream_name>id_barrio</stream_name>
+        <column_name>loca_com</column_name>
+        <stream_name>loca_com</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -1572,8 +1643,772 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>128</yloc>
+      <xloc>1408</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Compra BD</name>
+    <type>ExcelInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield />
+    <sheetfield />
+    <sheetrownumfield />
+    <rownumfield />
+    <sheetfield />
+    <filefield />
+    <limit>0</limit>
+    <encoding />
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field />
+    <accept_stepname />
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>codi_com</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>codi_bol</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>tdoc_com</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>ndoc_com</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>fech_com</name>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>valo_com</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>loca_com</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Compra</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory />
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory />
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory />
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Detalle_bol</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>detall_bol</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_dbo</column_name>
+        <stream_name>codi_dbo</stream_name>
+      </field>
+      <field>
+        <column_name>codi_bol</column_name>
+        <stream_name>codi_bol</stream_name>
+      </field>
+      <field>
+        <column_name>nume_dbo</column_name>
+        <stream_name>nume_dbo</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1408</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Detalle_bol BD</name>
+    <type>ExcelInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield />
+    <sheetfield />
+    <sheetrownumfield />
+    <rownumfield />
+    <sheetfield />
+    <filefield />
+    <limit>0</limit>
+    <encoding />
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field />
+    <accept_stepname />
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>codi_dbo</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>codi_bol</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>nume_dbo</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Detalle_bol</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory />
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory />
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory />
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Entidad</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>entidad</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>nit_ent</column_name>
+        <stream_name>nit_ent</stream_name>
+      </field>
+      <field>
+        <column_name>nomb_ent</column_name>
+        <stream_name>nomb_ent</stream_name>
+      </field>
+      <field>
+        <column_name>valxb_ent</column_name>
+        <stream_name>valxb_ent</stream_name>
+      </field>
+      <field>
+        <column_name>nume_bol</column_name>
+        <stream_name>nume_bol</stream_name>
+      </field>
+      <field>
+        <column_name>fini_sor</column_name>
+        <stream_name>fini_sor</stream_name>
+      </field>
+      <field>
+        <column_name>ffin_sor</column_name>
+        <stream_name>ffin_sor</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>512</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Entidad BD</name>
+    <type>ExcelInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield />
+    <sheetfield />
+    <sheetrownumfield />
+    <rownumfield />
+    <sheetfield />
+    <filefield />
+    <limit>0</limit>
+    <encoding />
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field />
+    <accept_stepname />
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>nit_ent</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>nomb_ent</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>valxb_ent</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>nume_bol</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>fini_sor</name>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>ffin_sor</name>
+        <type>Date</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Entidad</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory />
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory />
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory />
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>512</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Grupo</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>grupo</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_gru</column_name>
+        <stream_name>codi_gru</stream_name>
+      </field>
+      <field>
+        <column_name>desc_gru</column_name>
+        <stream_name>desc_gru</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Grupo BD</name>
+    <type>ExcelInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield />
+    <sheetfield />
+    <sheetrownumfield />
+    <rownumfield />
+    <sheetfield />
+    <filefield />
+    <limit>0</limit>
+    <encoding />
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field />
+    <accept_stepname />
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>codi_gru</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>desc_gru</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Grupo</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory />
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory />
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory />
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Menu</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>menu</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_men</column_name>
+        <stream_name>codi_men</stream_name>
+      </field>
+      <field>
+        <column_name>desc_men</column_name>
+        <stream_name>desc_men</stream_name>
+      </field>
+      <field>
+        <column_name>nive_men</column_name>
+        <stream_name>nive_men</stream_name>
+      </field>
+      <field>
+        <column_name>depe_men</column_name>
+        <stream_name>depe_men</stream_name>
+      </field>
+      <field>
+        <column_name>url_men</column_name>
+        <stream_name>url_men</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1710,178 +2545,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Menu</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>menu</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>codi_men</column_name>
-        <stream_name>codi_men</stream_name>
-      </field>
-      <field>
-        <column_name>desc_men</column_name>
-        <stream_name>desc_men</stream_name>
-      </field>
-      <field>
-        <column_name>nive_men</column_name>
-        <stream_name>nive_men</stream_name>
-      </field>
-      <field>
-        <column_name>depe_men</column_name>
-        <stream_name>depe_men</stream_name>
-      </field>
-      <field>
-        <column_name>url_men</column_name>
-        <stream_name>url_men</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Grupo BD</name>
-    <type>ExcelInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield />
-    <sheetfield />
-    <sheetrownumfield />
-    <rownumfield />
-    <sheetfield />
-    <filefield />
-    <limit>0</limit>
-    <encoding />
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field />
-    <accept_stepname />
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>codi_gru</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>desc_gru</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Grupo</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-      </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
       <xloc>112</xloc>
-      <yloc>304</yloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Grupo</name>
+    <name>Tipo</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -1893,7 +2563,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>grupo</table>
+    <table>tipo</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1909,13 +2579,25 @@
     <return_keys>N</return_keys>
     <return_field />
     <fields>
+      <field>
+        <column_name>codi_tip</column_name>
+        <stream_name>codi_tip</stream_name>
+      </field>
       <field>
         <column_name>codi_gru</column_name>
         <stream_name>codi_gru</stream_name>
       </field>
       <field>
-        <column_name>desc_gru</column_name>
-        <stream_name>desc_gru</stream_name>
+        <column_name>desc_tip</column_name>
+        <stream_name>desc_tip</stream_name>
+      </field>
+      <field>
+        <column_name>valo_tip</column_name>
+        <stream_name>valo_tip</stream_name>
+      </field>
+      <field>
+        <column_name>fijo_tip</column_name>
+        <stream_name>fijo_tip</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -1926,8 +2608,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
-      <yloc>304</yloc>
+      <xloc>336</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1972,24 +2654,24 @@
     <fields>
       <field>
         <name>codi_tip</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format>#</format>
+        <format />
         <currency />
         <decimal />
         <group />
       </field>
       <field>
         <name>codi_gru</name>
-        <type>Number</type>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format>#</format>
+        <format />
         <currency />
         <decimal />
         <group />
@@ -2064,13 +2746,127 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>544</yloc>
+      <xloc>96</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Tipo</name>
+    <name>UMcliseb BD</name>
+    <type>ExcelInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield />
+    <sheetfield />
+    <sheetrownumfield />
+    <rownumfield />
+    <sheetfield />
+    <filefield />
+    <limit>0</limit>
+    <encoding />
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field />
+    <accept_stepname />
+    <file>
+      <name />
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
+      <filemask />
+      <exclude_filemask />
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>codi_umc</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>codi_men</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+      <field>
+        <name>codi_ucs</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency />
+        <decimal />
+        <group />
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>UM_Cliseb</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+      </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory />
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory />
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory />
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName />
+    <pathFieldName />
+    <hiddenFieldName />
+    <lastModificationTimeFieldName />
+    <uriNameFieldName />
+    <rootUriNameFieldName />
+    <extensionFieldName />
+    <sizeFieldName />
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>576</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Ucliseb</name>
     <type>TableOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -2082,7 +2878,7 @@
     </partitioning>
     <connection>Heroku</connection>
     <schema>sisbol</schema>
-    <table>tipo</table>
+    <table>u_cliseb</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -2099,24 +2895,32 @@
     <return_field />
     <fields>
       <field>
-        <column_name>codi_tip</column_name>
-        <stream_name>codi_tip</stream_name>
+        <column_name>codi_ucs</column_name>
+        <stream_name>codi_ucs</stream_name>
       </field>
       <field>
-        <column_name>codi_gru</column_name>
-        <stream_name>codi_gru</stream_name>
+        <column_name>iden_ucs</column_name>
+        <stream_name>iden_ucs</stream_name>
       </field>
       <field>
-        <column_name>desc_tip</column_name>
-        <stream_name>desc_tip</stream_name>
+        <column_name>nomb_ucs</column_name>
+        <stream_name>nomb_ucs</stream_name>
       </field>
       <field>
-        <column_name>valo_tip</column_name>
-        <stream_name>valo_tip</stream_name>
+        <column_name>logi_ucs</column_name>
+        <stream_name>logi_ucs</stream_name>
       </field>
       <field>
-        <column_name>fijo_tip</column_name>
-        <stream_name>fijo_tip</stream_name>
+        <column_name>clav_ucs</column_name>
+        <stream_name>clav_ucs</stream_name>
+      </field>
+      <field>
+        <column_name>tipo_ucs</column_name>
+        <stream_name>tipo_ucs</stream_name>
+      </field>
+      <field>
+        <column_name>esta_ucs</column_name>
+        <stream_name>esta_ucs</stream_name>
       </field>
     </fields>
     <cluster_schema />
@@ -2127,8 +2931,63 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>544</yloc>
+      <xloc>352</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UMcliseb</name>
+    <type>TableOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>Heroku</connection>
+    <schema>sisbol</schema>
+    <table>um_cliseb</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field />
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field />
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field />
+    <fields>
+      <field>
+        <column_name>codi_umc</column_name>
+        <stream_name>codi_umc</stream_name>
+      </field>
+      <field>
+        <column_name>codi_men</column_name>
+        <stream_name>codi_men</stream_name>
+      </field>
+      <field>
+        <column_name>codi_ucs</column_name>
+        <stream_name>codi_ucs</stream_name>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>592</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2291,881 +3150,6 @@
     <GUI>
       <xloc>112</xloc>
       <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Ucliseb</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>u_cliseb</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>codi_ucs</column_name>
-        <stream_name>codi_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>iden_ucs</column_name>
-        <stream_name>iden_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>nomb_ucs</column_name>
-        <stream_name>nomb_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>logi_ucs</column_name>
-        <stream_name>logi_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>clav_ucs</column_name>
-        <stream_name>clav_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>tipo_ucs</column_name>
-        <stream_name>tipo_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>esta_ucs</column_name>
-        <stream_name>esta_ucs</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>352</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>UMcliseb BD</name>
-    <type>ExcelInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield />
-    <sheetfield />
-    <sheetrownumfield />
-    <rownumfield />
-    <sheetfield />
-    <filefield />
-    <limit>0</limit>
-    <encoding />
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field />
-    <accept_stepname />
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>codi_umc</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>codi_men</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>codi_ucs</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>UM_Cliseb</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-      </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Ucliseb 2</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>u_cliseb</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>codi_ucs</column_name>
-        <stream_name>codi_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>iden_ucs</column_name>
-        <stream_name>iden_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>nomb_ucs</column_name>
-        <stream_name>nomb_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>logi_ucs</column_name>
-        <stream_name>logi_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>clav_ucs</column_name>
-        <stream_name>clav_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>tipo_ucs</column_name>
-        <stream_name>tipo_ucs</stream_name>
-      </field>
-      <field>
-        <column_name>esta_ucs</column_name>
-        <stream_name>esta_ucs</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>624</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Compra BD</name>
-    <type>ExcelInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield />
-    <sheetfield />
-    <sheetrownumfield />
-    <rownumfield />
-    <sheetfield />
-    <filefield />
-    <limit>0</limit>
-    <encoding />
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field />
-    <accept_stepname />
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>codi_com</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>codi_bol</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>tdoc_com</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>ndoc_com</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>fech_com</name>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>valo_com</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>loca_com</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Compra</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-      </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Compra</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>compra</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>codi_com</column_name>
-        <stream_name>codi_com</stream_name>
-      </field>
-      <field>
-        <column_name>codi_bol</column_name>
-        <stream_name>codi_bol</stream_name>
-      </field>
-      <field>
-        <column_name>tdoc_com</column_name>
-        <stream_name>tdoc_com</stream_name>
-      </field>
-      <field>
-        <column_name>ndoc_com</column_name>
-        <stream_name>ndoc_com</stream_name>
-      </field>
-      <field>
-        <column_name>fech_com</column_name>
-        <stream_name>fech_com</stream_name>
-      </field>
-      <field>
-        <column_name>valo_com</column_name>
-        <stream_name>valo_com</stream_name>
-      </field>
-      <field>
-        <column_name>loca_com</column_name>
-        <stream_name>loca_com</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Detalle_bol BD</name>
-    <type>ExcelInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield />
-    <sheetfield />
-    <sheetrownumfield />
-    <rownumfield />
-    <sheetfield />
-    <filefield />
-    <limit>0</limit>
-    <encoding />
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field />
-    <accept_stepname />
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>codi_dbo</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>codi_bol</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>nume_dbo</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Detalle_bol</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-      </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Detalle_bol</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>detall_bol</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>codi_dbo</column_name>
-        <stream_name>codi_dbo</stream_name>
-      </field>
-      <field>
-        <column_name>codi_bol</column_name>
-        <stream_name>codi_bol</stream_name>
-      </field>
-      <field>
-        <column_name>nume_dbo</column_name>
-        <stream_name>nume_dbo</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>288</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Entidad BD</name>
-    <type>ExcelInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield />
-    <sheetfield />
-    <sheetrownumfield />
-    <rownumfield />
-    <sheetfield />
-    <filefield />
-    <limit>0</limit>
-    <encoding />
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field />
-    <accept_stepname />
-    <file>
-      <name />
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name>/Users/luisa/Trabajo_Ivan/Proyectos/unicentro/unicentro-integracion/pdi/Data_SISBOL.xlsx</name>
-      <filemask />
-      <exclude_filemask />
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>nit_ent</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>nomb_ent</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>valxb_ent</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>nume_bol</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>fini_sor</name>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-      <field>
-        <name>ffin_sor</name>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Entidad</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-      </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory />
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory />
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory />
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName />
-    <pathFieldName />
-    <hiddenFieldName />
-    <lastModificationTimeFieldName />
-    <uriNameFieldName />
-    <rootUriNameFieldName />
-    <extensionFieldName />
-    <sizeFieldName />
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>512</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Entidad</name>
-    <type>TableOutput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>Heroku</connection>
-    <schema>sisbol</schema>
-    <table>entidad</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field />
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field />
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field />
-    <fields>
-      <field>
-        <column_name>nit_ent</column_name>
-        <stream_name>nit_ent</stream_name>
-      </field>
-      <field>
-        <column_name>nomb_ent</column_name>
-        <stream_name>nomb_ent</stream_name>
-      </field>
-      <field>
-        <column_name>valxb_ent</column_name>
-        <stream_name>valxb_ent</stream_name>
-      </field>
-      <field>
-        <column_name>nume_bol</column_name>
-        <stream_name>nume_bol</stream_name>
-      </field>
-      <field>
-        <column_name>fini_sor</column_name>
-        <stream_name>fini_sor</stream_name>
-      </field>
-      <field>
-        <column_name>ffin_sor</column_name>
-        <stream_name>ffin_sor</stream_name>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>352</xloc>
-      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
